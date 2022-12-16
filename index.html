@@ -6,43 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
 
+    <script>
+        function getComputerChoice() {
+            const optionsArray = [' rock ', ' paper ', ' scissors ']
+            let computerChoice = optionsArray[Math.floor(Math.random() * optionsArray.length)];
+            alert (computerChoice);
+        }
     
+        function playerSelection() {
+            let playerChoice = prompt("rock, paper or scissors");
+            let userChoice = playerChoice.toLowerCase();
+    
+        }
+    
+       function playRound() {
+          if (playerChoice = null) {
+                alert("Please Refresh");
+            
+            } else if ()
+                 
+            
+        }
+    
+    
+    
+    
+        playerSelection()
+        //getComputerChoice();
+    
+        </script>
+
 </head>
 <body>
-<div class="form">
-    <label for="choiceField">Enter a guess: </label>
-    <input type="text" id="choiceField" class="choiceField">
-    <input type="submit" value="Submit Choice" class="guessSubmit">
 
 
-
-</div>
-
-<script>
-    function getComputerChoice() {
-        const optionsArray = [' rock ', ' paper ', ' scissors ']
-        let computerChoice = optionsArray[Math.floor(Math.random() * optionsArray.length)];
-        alert (computerChoice);
-    }
-
-    function playerSelection() {
-
-       // for 
-        let playerChoice = choiceField.value;
-        console.log(playerChoice);
-
-    }
-
-    function playRound(playerSelection, computerSelection) {
-
-
-    }
-
-
-    playerSelection()
-    //getComputerChoice();
-
-    </script>
 
 
 </body>
