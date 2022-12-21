@@ -8,44 +8,58 @@
 
 <script>
     function getComputerChoice() {
-            const optionsArray = [' rock ', ' paper ', ' scissors ']
+            const optionsArray = ['rock', 'paper', 'scissors']
             let computerChoice = optionsArray[Math.floor(Math.random() * optionsArray.length)];
-            console.log(computerChoice);
+            return computerChoice;
         }
     
-        function playerSelection() {
+        function getUserChoice() {
             let playerChoice = prompt("rock, paper or scissors");
             let userChoice = playerChoice.toLowerCase();
+            return userChoice;
         }
     
-       function playRound() {
-        let userChoice = playerSelection();  
+       function playRound(a, b) {
         
-        if (playerChoice = null) {
-                alert("Please Refresh");
+        let computerChoice = getComputerChoice();
+        let userChoice = getUserChoice();
 
-          } else if (userChoice == 'rock' && computerChoice == 'paper') {
-                let result = ("You won!");
+        if (userChoice === undefined) {
+                console.log("Please Refresh");
 
+          } else if (userChoice === "rock" && computerChoice === "paper") {
+                let result = ("You lost!");
+
+            console.log("You chose: " + userChoice);
+            console.log("Computer Chose: " + computerChoice);
+            console.log(result);
             return result;
 
-          } else if (userChoice == 'rock' && computerChoice == 'scissors'); {
-            let result = ("You lost!");
+          } else if (userChoice == "rock" && computerChoice == "scissors") {
+            let result = ("You won!");
 
+            console.log("You chose: " + userChoice);
+            console.log("Computer Chose: " + computerChoice);
+            console.log(result);
             return result;
-          }
-           
-                
+
+          } else if (userChoice == "rock" && computerChoice == "rock") {
+            let result = ("Draw!");
+
+            console.log("You chose: " + userChoice);
+            console.log("Computer Chose: " + computerChoice);
+            console.log(result);
+            return result;
+          }      
         
-       }
+        }
     
        function game() {
-        getComputerChoice();
         playRound();
        }
 
        game();
-       console.log(result)
+    
 
 </script>
 
