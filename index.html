@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors</title>
 
 <script>
     function getComputerChoice() {
@@ -23,9 +23,11 @@
         
         let computerChoice = getComputerChoice();
         let userChoice = getUserChoice();
+        let comWins = 0
+        let userWins = 0
 
-        if (userChoice === undefined) {
-                console.log("Please Refresh");
+        if (userChoice === '') {
+                console.log("Click to play again!");
 
           } else if (userChoice === "rock" && computerChoice === "paper") {
                 let result = ("You lost!");
@@ -33,7 +35,7 @@
             console.log("You chose: " + userChoice);
             console.log("Computer Chose: " + computerChoice);
             console.log(result);
-            return result;
+            comWins++;
 
           } else if (userChoice == "rock" && computerChoice == "scissors") {
             let result = ("You won!");
@@ -41,7 +43,7 @@
             console.log("You chose: " + userChoice);
             console.log("Computer Chose: " + computerChoice);
             console.log(result);
-            return result;
+            userWins++;
 
           } else if (userChoice == "rock" && computerChoice == "rock") {
             let result = ("Draw!");
@@ -49,22 +51,87 @@
             console.log("You chose: " + userChoice);
             console.log("Computer Chose: " + computerChoice);
             console.log(result);
-            return result;
-          }      
-        
+            
+          } else if (userChoice == "scissors" && computerChoice == "scissors") {
+
+            let result = ("Draw!");
+
+            console.log("You chose: " + userChoice);
+            console.log("Computer Chose: " + computerChoice);
+            console.log(result);
+
+          }  else if (userChoice === "scissors" && computerChoice === "paper") {
+                let result = ("You Won!");
+
+            console.log("You chose: " + userChoice);
+            console.log("Computer Chose: " + computerChoice);
+            console.log(result);
+            userWins++;
+
+          } else if (userChoice == "scissors" && computerChoice == "rock") {
+            let result = ("You Lost!");
+
+            console.log("You chose: " + userChoice);
+            console.log("Computer Chose: " + computerChoice);
+            console.log(result);
+            comWins++;
+            
+        } else if (userChoice == "paper" && computerChoice == "paper") {
+
+        let result = ("Draw!");
+
+        console.log("You chose: " + userChoice);
+        console.log("Computer Chose: " + computerChoice);
+        console.log(result);
+
+        }  else if (userChoice === "paper" && computerChoice === "rock") {
+            let result = ("You Won!");
+
+        console.log("You chose: " + userChoice);
+        console.log("Computer Chose: " + computerChoice);
+        console.log(result);
+        userWins++;
+
+        } else if (userChoice == "paper" && computerChoice == "scissors") {
+        let result = ("You Lost!");
+
+        console.log("You chose: " + userChoice);
+        console.log("Computer Chose: " + computerChoice);
+        console.log(result);
+        comWins++;
+
         }
-    
+
+        if (comWins == 5) {
+            alert("Game over! You lost!");
+
+        } else if (userWins == 5) {
+            alert("Game over! You won!");
+
+        } else {
+            console.log("Computer: " + comWins + " My Score: " + userWins);
+
+        }
+
+        }
+            
+
        function game() {
+     
         playRound();
+
        }
 
-       game();
+       
     
 
 </script>
 
 </head>
 <body>
-    
+
+
+<input id="clickMe" type="button" value="Click to play another round" onclick="game();" /> 
+
 </body>
 </html>
